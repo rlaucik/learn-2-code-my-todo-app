@@ -2,12 +2,16 @@ import React from 'react';
 
 import { ItemCreateInput } from './ItemCreateInput';
 import { ItemListContainer } from './ItemListContainer';
+import { editItemText } from './TodoAppService';
 
 export class TodoAppContainer extends React.Component {
     constructor() {
         super();
         this.state = {
-            items: [],
+            items: [
+                { text: 'Make todo list', completed: false },
+                { text: 'Improve the code', completed: false }
+            ],
         };
     }
 
@@ -20,6 +24,7 @@ export class TodoAppContainer extends React.Component {
                 <ItemListContainer
                     items={this.state.items}
                     onItemChecked={this.completeItem}
+                    onEditItem={this.onItemEdit}
                 />
             </>
         );
@@ -33,12 +38,19 @@ export class TodoAppContainer extends React.Component {
             ]
         });
     }
+
+    onItemEdit = (text, index) => {
+        const updatedItems = editItemText(this.state.items, index, text);
+        this.setState({
+            items: updatedItems,
+        });
+    }
     
-    completeItem = (event, text) => {
+    completeItem = (completed, text) => {
         const currentItem = this.state.items.find(item => item.text === text);
         const itemIndex = this.state.items.indexOf(currentItem);
         const updatedItems = [...this.state.items]
-        updatedItems[itemIndex].completed = event.target.checked;
+        updatedItems[itemIndex].completed = completed;
         this.setState({
             items: updatedItems
         });

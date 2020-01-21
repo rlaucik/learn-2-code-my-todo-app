@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditableLabel renders input when in editing mode 1`] = `
+<input
+  onChange={[Function]}
+  onKeyPress={[Function]}
+  type="text"
+  value="text to edit"
+/>
+`;
+
+exports[`EditableLabel renders label when not editing 1`] = `
+<label
+  onDoubleClick={[Function]}
+>
+  some text
+</label>
+`;

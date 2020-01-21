@@ -1,3 +1,11 @@
 .item.completed {
     text-decoration: line-through;
 }
+
+.item label {
+    user-select: none;
+}
+
+.item input[type='text'] {
+    width: 500px;
+}
