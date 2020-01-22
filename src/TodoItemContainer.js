@@ -33,6 +33,6 @@ export class TodoItemContainer extends React.Component {
         this.setState({
             completed,
         })
-        this.props.onItemChecked(completed, this.props.item.text);
+        this.props.onItemChecked(completed, this.props.itemIndex);
     }
 }

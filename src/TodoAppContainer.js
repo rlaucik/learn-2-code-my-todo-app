@@ -46,9 +46,7 @@ export class TodoAppContainer extends React.Component {
         });
     }
     
-    completeItem = (completed, text) => {
-        const currentItem = this.state.items.find(item => item.text === text);
-        const itemIndex = this.state.items.indexOf(currentItem);
+    completeItem = (completed, itemIndex) => {
         const updatedItems = [...this.state.items]
         updatedItems[itemIndex].completed = completed;
         this.setState({
