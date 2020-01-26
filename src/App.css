@@ -1,11 +1,26 @@
-.item.completed {
+.item.completed label {
     text-decoration: line-through;
 }
 
 .item label {
     user-select: none;
+    display: inline-block;
+    width:300px;
 }
 
 .item input[type='text'] {
-    width: 500px;
+    width: 300px;
+}
+
+.item button.delete {
+    border: 0 none;
+    font-weight: 500;
+    cursor: pointer;
+    margin-left:3px;
+    height: 1em;
+    display: none;
+}
+
+.item:hover button.delete {
+    display: inline;
 }

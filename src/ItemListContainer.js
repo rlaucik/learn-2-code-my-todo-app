@@ -10,6 +10,7 @@ export class ItemListContainer extends React.Component {
                 itemIndex={index}
                 key={item.text}
                 onEdit={this.props.onEditItem}
+                onItemDelete={this.props.onItemDelete}
                 onItemChecked={this.props.onItemChecked}
             />
         );
